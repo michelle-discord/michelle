@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html style="background: rgba(0, 5, 19, 0.918); background-image: url(./imgs/main-bg.jpg);" >
+<title>Michelle | Commands</title>
+<link rel="icon" href="./imgs/icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100% ;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.800);
+    }
+
+    footer a {
+      float: left;
+      color: #c8c8c8;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    footer a:hover {
+      background-color: rgba(221, 221, 221, 0.75);
+      color: black;
+    }
+    
+    footer a.active {
+      background-color: #00adadce;
+      color: white;
+    }
+    
+    .topnav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.800);
+    }
+    
+    .topnav a {
+      float: left;
+      display: block;
+      color: #c8c8c8;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: rgba(221, 221, 221, 0.75);
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #00adadce;
+      color: white;
+    }
+
+    .collapsible {
+        background-color: rgba(0, 0, 0, 0.561);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: large;
+        cursor: pointer;
+        padding: 20px;
+        width: 80%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 20px;
+        margin-left: 10%;
+        margin-top: 1%;
+        border-radius: 10px;
+    }
+
+    .collapsible:hover {
+        background-color: rgba(255, 255, 255, 0.089);
+    }
+
+    .active.collapsible {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .content {
+        display: none;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.561);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        padding: 1%;
+        width: 78%;
+        margin-left: 10%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .content p {
+        padding-left: 12px;
+        color: rgb(189, 189, 189);
+    }
+
+    @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {position: fixed;}
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    .topnav .icon {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 1200px) {
+        .btnContainer button:not(:first-child) {display: none;}
+        .btnContainer button {
+            width: 60%;
+        }
+        .btnContainer a.icon {
+            float: right;
+            margin-right: 10%;
+            margin-bottom: 5%;
+            display: block;
+            color: white;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .btnContainer.responsive {
+            position: relative;
+        }
+
+        .btnContainer.responsive .icon {
+            float: right;
+            display: block;
+            color: white;
+            text-align: left;
+        }
+
+        .btnContainer.responsive button {
+            float: left;
+            display: block;
+            text-align: center;
+            width: 60%;
+            margin-left: 25%;
+            border-radius: 0;
+        }
+
+        .btnContainer.responsive button[type="all"] {
+            float: left;
+            display: block;
+            text-align: center;
+            width: 60%;
+            margin-left: 25%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .btnContainer.responsive button[type="info"] {
+            float: left;
+            display: block;
+            text-align: center;
+            width: 60%;
+            margin-left: 25%;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-bottom: 5%;
+        }
+    }
+
+    .btnContainer .icon {
+        display: none;
+    }
+
+    .filterDiv {
+        display: none; /* Hidden by default */
+    }
+
+    .show {
+        display: block;
+    }
+
+    .btn {
+        border: none;
+        outline: none;
+        padding: 10px;
+        background-color: #ffffffcc;
+        cursor: pointer;
+        border-radius: 3px;
+        float: left;
+        width: 10%;
+        margin-left: 1%;
+    }
+
+    .btn:hover {
+        background-color: #ddd;
+    }
+
+</style>
+
+<div class="topnav" id="myTopnav">
+    <a href="./main.html">Home</a>
+    <a class="active" href="./commands.html">Commands</a>
+    <a href="./patch.html">Patch Notes</a>
+    <a href="./staff.html">Staff</a>
+    <a href="https://github.com/MuditMehta07/Michelle">GitHub</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+</script>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="margin-bottom: 5%; margin-top: 5%;">
+
+    <p style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: white; text-align: center; padding: 2%;">Commands</p>
+
+    <div style="margin-left: 10%; margin-bottom: 7%;" class="btnContainer" id="myBtnContainer">
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction2()">
+            <i class="fa fa-filter"></i>
+        </a>
+        <button class="btn" type="all" onclick="filterSelection('all')"> All</button>
+        <button class="btn" onclick="filterSelection('general')"> General</button>
+        <button class="btn" onclick="filterSelection('level')"> Level</button>
+        <button class="btn" onclick="filterSelection('fun')"> Fun</button>
+        <button class="btn" onclick="filterSelection('emotes')"> Emotes</button>
+        <button class="btn" onclick="filterSelection('shop')"> Shop</button>
+        <button class="btn" onclick="filterSelection('casual')"> Casual</button>
+        <button class="btn" type="info" onclick="filterSelection('info')"> Info</button>
+    </div>
+
+    <script>
+        function myFunction2() {
+          var x = document.getElementById("myBtnContainer");
+          if (x.className === "btnContainer") {
+            x.className += " responsive";
+          } else {
+            x.className = "btnContainer";
+          }
+        }
+    </script>
+
+    <div class="filterDiv general">
+        <button type="button" class="collapsible">daily</button>
+        <div class="content">
+            <p><b>Description :</b> Get free XP every 24 hours</p>
+            <p><b>Usage :</b> <code>=daily</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv general">
+        <button type="button" class="collapsible">embed</button>
+        <div class="content">
+            <p><b>Description :</b> Embed your texts</p>
+            <p><b>Usage :</b> <code>=embed [text]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv general">
+        <button type="button" class="collapsible">giftbox</button>
+        <div class="content">
+            <p><b>Description :</b> Claim your giftbox</p>
+            <p><b>Usage :</b> <code>=giftbox</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv general">
+        <button type="button" class="collapsible">ping</button>
+        <div class="content">
+            <p><b>Description :</b> Create a custom response</p>
+            <p><b>Usage :</b> <code>=ping</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv general">
+        <button type="button" class="collapsible">prefix</button>
+        <div class="content">
+            <p><b>Description :</b> Change current server's command prefix</p>
+            <p><b>Usage :</b> <code>=prefix [new prefix]</code></p>
+            <p><b>Permission :</b> Administrator</p>
+        </div>
+    </div>
+
+    <div class="filterDiv general">
+        <button type="button" class="collapsible">reaction</button>
+        <div class="content">
+            <p><b>Description :</b> Setup reaction roles</p>
+            <p><b>Usage :</b> <code>=reaction</code></p>
+            <p><b>Permission :</b> Administrator</p>
+        </div>
+    </div>
+
+    <div class="filterDiv general">
+        <button type="button" class="collapsible">confess</button>
+        <div class="content">
+            <p><b>Description :</b> Setup a confession channel</p>
+            <p><b>Usage :</b> <code>=confess</code></p>
+            <p><b>Permission :</b> Administrator</p>
+        </div>
+    </div>
+
+    <div class="filterDiv general">
+        <button type="button" class="collapsible">welcome</button>
+        <div class="content">
+            <p><b>Description :</b> Setup a welcome channel</p>
+            <p><b>Usage :</b> <code>=welcome</code></p>
+            <p><b>Permission :</b> Administrator</p>
+        </div>
+    </div>
+
+    <div class="filterDiv level">
+        <button type="button" class="collapsible">level</button>
+        <div class="content">
+            <p><b>Description :</b> View your level card</p>
+            <p><b>Usage :</b> <code>=level</code></p>
+            <p><b>Note :</b> You can check other user's level by mentioning them with the command (<b>Example :</b> <code>=level @user</code>)</p>
+        </div>
+    </div>
+
+    <div class="filterDiv level">
+        <button type="button" class="collapsible">top</button>
+        <div class="content">
+            <p><b>Description :</b> View top 10 users on leaderboard</p>
+            <p><b>Usage :</b> <code>=top</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv level">
+        <button type="button" class="collapsible">leaderboard</button>
+        <div class="content">
+            <p><b>Description :</b> View the entire leaderboard</p>
+            <p><b>Usage :</b> <code>=lb</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">8ball</button>
+        <div class="content">
+            <p><b>Description :</b> Ask the 8ball anything you want</p>
+            <p><b>Usage :</b> <code>=8ball [text]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">aww</button>
+        <div class="content">
+            <p><b>Description :</b> Get wholesome posts from Reddit</p>
+            <p><b>Usage :</b> <code>=aww</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">dadjokes</button>
+        <div class="content">
+            <p><b>Description :</b> Get a dadjoke</p>
+            <p><b>Usage :</b> <code>=dadjokes</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">dice</button>
+        <div class="content">
+            <p><b>Description :</b> Roll a dice</p>
+            <p><b>Usage :</b> <code>=dice</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">doggo</button>
+        <div class="content">
+            <p><b>Description :</b> Get a dog post from Reddit</p>
+            <p><b>Usage :</b> <code>=doggo</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">dumbrate</button>
+        <div class="content">
+            <p><b>Description :</b> Check how dumb you are</p>
+            <p><b>Usage :</b> <code>=dumbrate</code></p>
+            <p><b>Note :</b> You can check other user's dumbrate by mentioning them with the command (<b>Example :</b> <code>=dumbrate @user</code>)</p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">flip</button>
+        <div class="content">
+            <p><b>Description :</b> Flip a coin</p>
+            <p><b>Usage :</b> <code>=flip</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">groot</button>
+        <div class="content">
+            <p><b>Description :</b> Convert text to Groot language</p>
+            <p><b>Usage :</b> <code>=groot [text]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">hack</button>
+        <div class="content">
+            <p><b>Description :</b> Hack a user. 100% real</p>
+            <p><b>Usage :</b> <code>=hack [user mention]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">kill</button>
+        <div class="content">
+            <p><b>Description :</b> Kill users and steal their xp. Better the weapon, higher the xp </p>
+            <p><b>Usage :</b> <code>=kill [weapon] [user mention]</code></p>
+            <p><b>Example :</b> <code>=kill knife @user</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">kitty</button>
+        <div class="content">
+            <p><b>Description :</b> Get a cat post from Reddit</p>
+            <p><b>Usage :</b> <code>=kitty</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">meme</button>
+        <div class="content">
+            <p><b>Description :</b> Entertain yourself with memes</p>
+            <p><b>Usage :</b> <code>=meme [optional category]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">roast</button>
+        <div class="content">
+            <p><b>Description :</b> Roast a user with a lame one-liner</p>
+            <p><b>Usage :</b> <code>=roast [user mention]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">showerthoughts</button>
+        <div class="content">
+            <p><b>Description :</b> Get a random shower thought</p>
+            <p><b>Usage :</b> <code>=shower</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv fun">
+        <button type="button" class="collapsible">simprate</button>
+        <div class="content">
+            <p><b>Description :</b> Check how simp you are</p>
+            <p><b>Usage :</b> <code>=simprate</code></p>
+            <p><b>Note :</b> You can check other user's simprate by mentioning them with the command (<b>Example :</b> <code>=simprate @user</code>)</p>
+        </div>
+    </div> 
+    
+    <div class="filterDiv shop">
+        <button type="button" class="collapsible">inventory</button>
+        <div class="content">
+            <p><b>Description :</b> View your owned items in the inventory</p>
+            <p><b>Usage :</b> <code>=inventory</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv shop">
+        <button type="button" class="collapsible">spells</button>
+        <div class="content">
+            <p><b>Description :</b> View all the available spells</p>
+            <p><b>Usage :</b> <code>=spells</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv shop">
+        <button type="button" class="collapsible">jutsu</button>
+        <div class="content">
+            <p><b>Description :</b> View all the available jutsu</p>
+            <p><b>Usage :</b> <code>=jutsu</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv shop">
+        <button type="button" class="collapsible">weapons</button>
+        <div class="content">
+            <p><b>Description :</b> View all the available weapons</p>
+            <p><b>Usage :</b> <code>=weapons</code></p>
+        </div>
+    </div> 
+
+    <div class="filterDiv shop">
+        <button type="button" class="collapsible">buy</button>
+        <div class="content">
+            <p><b>Description :</b> Get a list of items you can buy</p>
+            <p><b>Usage :</b> <code>=buy</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv shop">
+        <button type="button" class="collapsible">sell</button>
+        <div class="content">
+            <p><b>Description :</b> Get a list of items you can sell</p>
+            <p><b>Usage :</b> <code>=sell</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv emotes">
+        <button type="button" class="collapsible">highfive</button>
+        <div class="content">
+            <p><b>Description :</b> Highfive any given user</p>
+            <p><b>Usage :</b> <code>=highfive [user mention]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv emotes">
+        <button type="button" class="collapsible">hug</button>
+        <div class="content">
+            <p><b>Description :</b> Hug any given user</p>
+            <p><b>Usage :</b> <code>=hug [user mention]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv emotes">
+        <button type="button" class="collapsible">kiss</button>
+        <div class="content">
+            <p><b>Description :</b> Kiss any given user</p>
+            <p><b>Usage :</b> <code>=kiss [user mention]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv emotes">
+        <button type="button" class="collapsible">pat</button>
+        <div class="content">
+            <p><b>Description :</b> Pat any given user</p>
+            <p><b>Usage :</b> <code>=pat [user mention]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv emotes">
+        <button type="button" class="collapsible">punch</button>
+        <div class="content">
+            <p><b>Description :</b> Punch any given user</p>
+            <p><b>Usage :</b> <code>=punch [user mention]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv emotes">
+        <button type="button" class="collapsible">slap</button>
+        <div class="content">
+            <p><b>Description :</b> Slap any given user</p>
+            <p><b>Usage :</b> <code>=slap [user mention]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">lang</button>
+        <div class="content">
+            <p><b>Description :</b> Get a list of language codes</p>
+            <p><b>Usage :</b> <code>=lang</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">detect</button>
+        <div class="content">
+            <p><b>Description :</b> Detect the language of the given text</p>
+            <p><b>Usage :</b> <code>=detect [text]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">translate</button>
+        <div class="content">
+            <p><b>Description :</b> Translate text to any language</p>
+            <p><b>Usage :</b> <code>=tr [text] [language code]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">wiki?</button>
+        <div class="content">
+            <p><b>Description :</b> Search on Wikipedia</p>
+            <p><b>Usage :</b> <code>=wiki? [query]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">wiki</button>
+        <div class="content">
+            <p><b>Description :</b> Get a Wikipedia result</p>
+            <p><b>Usage :</b> <code>=wiki [query]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">reddit</button>
+        <div class="content">
+            <p><b>Description :</b> Get a post from Reddit for the given Subreddit</p>
+            <p><b>Usage :</b> <code>=reddit [subreddit]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">youtube</button>
+        <div class="content">
+            <p><b>Description :</b> Get a youtube video for the given query</p>
+            <p><b>Usage :</b> <code>=yt [query]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">morse</button>
+        <div class="content">
+            <p><b>Description :</b> Translate text to morse code</p>
+            <p><b>Usage :</b> <code>=morse [text]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv casual">
+        <button type="button" class="collapsible">unmorse</button>
+        <div class="content">
+            <p><b>Description :</b> Translate text from morse code</p>
+            <p><b>Usage :</b> <code>=unmorse [text]</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv info">
+        <button type="button" class="collapsible">feedback</button>
+        <div class="content">
+            <p><b>Description :</b> Report bugs and suggest features</p>
+            <p><b>Usage :</b> <code>=feedback</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv info">
+        <button type="button" class="collapsible">invite</button>
+        <div class="content">
+            <p><b>Description :</b> Get an invite link for Michelle</p>
+            <p><b>Usage :</b> <code>=invite</code></p>
+        </div>
+    </div>
+
+    <div class="filterDiv info">
+        <button type="button" class="collapsible">michelle</button>
+        <div class="content">
+            <p><b>Description :</b> About Michelle</p>
+            <p><b>Usage :</b> <code>=michelle</code></p>
+        </div> 
+    </div>
+
+
+    <div class="filterDiv info">
+        <button type="button" class="collapsible">profile</button>
+        <div class="content">
+            <p><b>Description :</b> View your Michelle profile</p>
+            <p><b>Usage :</b> <code>=profile [optional user mention]</code></p>
+        </div> 
+    </div>
+
+
+    <div class="filterDiv info">
+        <button type="button" class="collapsible">server</button>
+        <div class="content">
+            <p><b>Description :</b> View current server's Michelle profile</p>
+            <p><b>Usage :</b> <code>=server</code></p>
+        </div> 
+    </div>
+
+
+    <div class="filterDiv info">
+        <button type="button" class="collapsible">vote</button>
+        <div class="content">
+            <p><b>Description :</b> Vote for Michelle on Top.gg</p>
+            <p><b>Usage :</b> <code>=vote</code></p>
+        </div> 
+    </div>
+
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
+    </script>
+
+    <footer>
+        <a href="https://github.com/MuditMehta07/Michelle/blob/main/PrivacyPolicy.md">Privacy Policy</a>
+        <a href="https://github.com/MuditMehta07/Michelle/blob/main/TermsOfService.md">Terms of Service</a>
+        <a href="https://top.gg/bot/840180379389263882">Top.gg</a>
+      </footer>
+</body>
+
+<script>
+    filterSelection("all")
+
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+        for (i = 0; i < x.length; i++) {
+            RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+        }
+    }
+
+    // Show filtered elements
+    function AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+            }
+        }
+    }
+
+    // Hide elements that are not selected
+    function RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+</script>
+
+</html>

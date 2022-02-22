@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html style="background: rgba(0, 5, 19, 0.918); background-image: url(./imgs/main-bg.jpg);" >
+<title>Michelle | Patch Notes</title>
+<link rel="icon" href="./imgs/icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100% ;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.800);
+    }
+
+    footer a {
+      float: left;
+      color: #c8c8c8;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    footer a:hover {
+      background-color: rgba(221, 221, 221, 0.75);
+      color: black;
+    }
+    
+    footer a.active {
+      background-color: #00adadce;
+      color: #00adad;
+    }
+    
+    .topnav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.800);
+    }
+    
+    .topnav a {
+      float: left;
+      color: #c8c8c8;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: rgba(221, 221, 221, 0.75);
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #00adadce;
+      color: white;
+    }
+
+    .intro {
+      margin-top: 12%;
+      margin-bottom: 10%;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: aliceblue;
+      padding: 2%;
+    }
+
+    SPAN.li  {
+        display: list-item;
+        margin-left: 7%;
+        margin-bottom: 2%;
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {position: fixed;}
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    .topnav .icon {
+        display: none;
+    }
+
+</style>
+
+<div class="topnav" id="myTopnav">
+    <a href="./main.html">Home</a>
+    <a href="./commands.html">Commands</a>
+    <a class="active" href="./patch.html">Patch Notes</a>
+    <a href="./staff.html">Staff</a>
+    <a href="https://github.com/MuditMehta07/Michelle">GitHub</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="margin-top: 5%;">
+
+    <p style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: white; text-align: center; padding: 2%;">Patch Notes</p>
+
+    <p style="font-size: 30px; font-family: Arial, Helvetica, sans-serif; color: white; float: left; margin-left: 10%; width: 80%;">Patch 1.7 <code style="font-size: large;">February 14, 2022</code>
+        <span style="margin-top: 3%;" class=li>Quality of casual section in the Help Command</span>
+        <span class=li>Added command help when a command is used incorrectly</span>
+        <span class=li>New Command : <strong>top</strong> : Displays the top 10 leaderboard</span>
+        <span class=li>Command Update : <strong>leaderboard</strong> : Displays the entire leaderboard</span>
+    </p>
+
+    <p style="font-size: 30px; font-family: Arial, Helvetica, sans-serif; color: white; float: left; margin-left: 10%; width: 80%;">Patch 1.6 <code style="font-size: large;">January 22, 2022</code>
+        <span style="margin-top: 3%;" class=li>New Command : <strong>transform</strong> : Transformation Jutsu users can now edit their names</span>
+    </p>
+
+    <p style="font-size: 30px; font-family: Arial, Helvetica, sans-serif; color: white; float: left; margin-left: 10%; width: 80%; margin-bottom: 5%;">Patch 1.5 <code style="font-size: large;">January 11, 2022</code>
+        <span style="margin-top: 3%;" class=li>New Command : <strong>highfive</strong> : Request the highest of fives</span>
+        <span class=li>New Command : <strong>punch</strong> : Punch an irritating user</span>
+        <span class=li>New Command : <strong>pat</strong> : Comfort your loved ones</span>
+        <span class=li>New Command : <strong>dadjoke</strong> : Sends a dad joke</span>
+        <span class=li>New Command : <strong>showerthoughts</strong> : Sends a random shower thought</span>
+        <span class=li>Updated Section : <strong>Image</strong> has been renamed to 'Emotes'</span>
+        <span class=li>Updated Section : <strong>Store</strong> is now a section in the Help Index instead of a command</span>
+        <span class=li>Bug Fixed : Leaderboard issue fixed, you can now view 1-10 ranks</span>
+    </p>
+
+</body>
+
+<footer>
+    <a href="https://github.com/MuditMehta07/Michelle/blob/main/PrivacyPolicy.md">Privacy Policy</a>
+    <a href="https://github.com/MuditMehta07/Michelle/blob/main/TermsOfService.md">Terms of Service</a>
+    <a href="https://top.gg/bot/840180379389263882">Top.gg</a>
+  </footer>
+
+</html>
