@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html style="background: rgba(0, 5, 19, 0.918); background-image: url(./imgs/main-bg.jpg);" >
+<title>Patch Notes</title>
+<link rel="icon" href="./imgs/icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100% ;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.800);
+    }
+
+    footer a {
+      float: left;
+      color: #c8c8c8;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    footer a:hover {
+      background-color: rgba(221, 221, 221, 0.75);
+      color: black;
+    }
+    
+    footer a.active {
+      background-color: #00adadce;
+      color: #00adad;
+    }
+    
+    .topnav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.800);
+    }
+    
+    .topnav a {
+      float: left;
+      color: #c8c8c8;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: rgba(221, 221, 221, 0.75);
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #00adadce;
+      color: white;
+    }
+
+    .intro {
+      margin-top: 12%;
+      margin-bottom: 10%;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: aliceblue;
+      padding: 2%;
+    }
+
+    SPAN.li  {
+        display: list-item;
+        margin-left: 7%;
+        margin-bottom: 2%;
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {position: fixed;}
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    .topnav .icon {
+        display: none;
+    }
+
+    .collapsible {
+        background-color: rgba(0, 0, 0, 0.561);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: large;
+        cursor: pointer;
+        padding: 20px;
+        width: 80%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 20px;
+        margin-left: 10%;
+        margin-top: 1%;
+        border-radius: 10px;
+    }
+
+    .collapsible:hover {
+        background-color: rgba(255, 255, 255, 0.089);
+    }
+
+    .active.collapsible {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .content {
+        display: none;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.561);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        padding: 1%;
+        width: 78%;
+        margin-left: 10%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .content p {
+        padding-left: 12px;
+        color: rgb(189, 189, 189);
+    }
+ 
+</style>
+
+<div class="topnav" id="myTopnav">
+    <a href="./index.html">Home</a>
+    <a href="./commands.html">Commands</a>
+    <a class="active" href="./patch.html">Patch Notes</a>
+    <a href="./staff.html">Staff</a>
+    <a href="https://github.com/MuditMehta07/Michelle">GitHub</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="margin-top: 5%;">
+
+    <p style="font-size: 50px; font-family: Arial, Helvetica, sans-serif; color: white; text-align: center; padding: 2%;">Patch Notes</p>
+
+    <button type="button" class="collapsible">Patch 2.1 - <code style="font-size: large;">March 29, 2022</code></button>
+    <div class="content">
+        <p><b>Improvements :</b></p>
+        <p><b>Help Section : </b>Commands have been re-categorized</p>
+        <p><b>Look and Feel : </b><code>Chest</code> : Now displays information in a much more presentable manner</p>
+        <p><b>Look and Feel : </b><code>Store</code> : Added emojis for <b>Sage Spell</b> and <b>Hunter Spell</b></p>
+        <p><b>Look and Feel : </b><code>Inventory</code> : Inventory has been entirely re-designed </p>
+        <p><b>Bug Fixes :</b></p>
+        <p>Chest help commands updated to provide better help of the <code>usage</code></p>
+    </div>
+
+    <button type="button" class="collapsible">Patch 2.0 - <code style="font-size: large;">March 22, 2022</code></button>
+    <div class="content">
+        <p><b>Improvements :</b></p>
+        <p>Commands have been re-categorized in the <b>Help Section</b></p>
+        <p>Characters now use their quotes from the animes in <b>Beg Command</b></p>
+        <p><b>Commands :</b></p>
+        <p><b>New Group</b> : <code>chest</code> : Store your XP inside a chest to keep it safe from the <b>Kill command</b>.</p>
+        <p>Chests can also be used to transfer XP. Deposit XP from one server, withdraw it from another</p>
+        <p><b>Bug Fixes :</b></p>
+        <p>Fixed a bug where the <b>Daily</b> command was not awarding XP</p>
+    </div>
+
+    <button type="button" class="collapsible">Patch 1.9 - <code style="font-size: large;">March 17, 2022</code></button>
+    <div class="content">
+        <p><b>Account Bans</b> : Feedbacks sent by users through Michelle are posted on Michelle's Community server.</p>
+        <p>If users spam unnecessary or inappropriate reports, they will get a ban i.e. they will not be able to use the bot anymore</p>
+        <p><b>Level System</b> : Michelle will no longer award any XP points for messages sent by users.</p>
+        <p>This is because of the recent spam reports and to encourage users to use our commands to increase their level</p>
+        <p><b>New Command</b> : <code>guess</code> : Guess the Pokemon </p>
+    </div>
+    
+    <button type="button" class="collapsible">Patch 1.8 - <code style="font-size: large;">February 26, 2022</code></button>
+    <div class="content">
+        <p><b>Limitations</b> : We have noticed that users are spamming to get XP (5 XP awarded per message).</p>
+        <p>To avoid this, Michelle will stop awarding XP temporarily if spamming is noticed</p>
+    </div>
+
+    <button type="button" class="collapsible">Patch 1.7 - <code style="font-size: large;">February 14, 2022</code></button>
+    <div class="content">
+        <p><b>Improvements :</b></p>
+        <p>Quality of the <b>Casual Section</b> in the help command</p>
+        <p>Added command assist when a command is used incorrectly</p>
+        <p><b>Commands :</b></p>
+        <p>New Command : top : Displays the top 10 leaderboard</p>
+        <p>Command Update : leaderboard : Displays the entire leaderboard</p>
+    </div>
+
+    <button type="button" class="collapsible">Patch 1.6 - <code style="font-size: large;">January 22, 2022</code></button>
+    <div class="content">
+        <p><b>Commands :</b></p>
+        <p>New Command : transform : Transformation Jutsu owners can now change their names on the leaderboard</p>
+    </div>
+
+    <button type="button" class="collapsible">Patch 1.5 - <code style="font-size: large;">January 11, 2022</code></button>
+    <div class="content">
+        <p><b>Commands :</b></p>
+        <p>New Command : highfive : Request the highest of fives</p>
+        <p>New Command : punch : Punch an irritating user</p>
+        <p>New Command : pat : Comfort your loved ones</p>
+        <p>New Command : dadjoke : Sends a dad joke</p>
+        <p>New Command : showerthoughts : Sends a random shower thought</p>
+        <p><b>Improvements :</b></p>
+        <p>Updated Section : Image has been renamed to 'Emotes'</p>
+        <p>Updated Section : Store is now a section in the Help Index instead of a command</p>
+        <p><b>Bugs :</b></p>
+        <p>Bug : leaderboard : Leaderboard only showed Ranks 1-5 instead of 1-10</p>
+    </div>
+
+    <button type="button" class="collapsible">Patch 1.4 - <code style="font-size: large;">January 9, 2022</code></button>
+    <div class="content">
+        <p><b>Commands :</b></p>
+        <p>Help Command Update : The help command has been upgraded and is now easy-to-use with the new Select Menu</p>
+        <p>New Command : dumbrate : Check your or another user's dumbrate</p>
+        <p>New Command : simprate : Check your or another user's simprate</p>
+        <p>New Command : hack : Hack a user - 100% real</p>
+        <p>New Command : kitty : Sends a cat pic</p>
+        <p>New Command : doggo : Sends a dog pic</p>
+        <p>New Command : aww : Sends a wholesome meme</p>
+        <p>Updated Command : hug / kiss / slap : Random GIFS will now be sent instead of an AI generated picture</p>
+        <p>Updated Command : meme / reddit : Updated the commands for a cleaner look</p>
+        <p>Updated Command : 8ball : Added new replies and increased reply quality</p>
+        <p>Updated Command : michelle : The 'website' link will now redirect to MICHELLE's GitHub page instead of Top.gg page</p>
+        <p><b>Improvements :</b></p>
+        <p>Removed Feature : giftbox : You will not recieve a gift box on inviting MICHELLE</p>
+        <p>Removed Feature : themed icons : Themed icons will not appear on the help command and instead appear in command sub-sections</p>
+        <p><b>Bugs :</b></p>
+        <p>Bug : leaderboard : Leaderboard only showed Ranks 1-5 instead of 1-10</p>
+    </div>
+
+    <button type="button" class="collapsible">Patch 1.2 - <code style="font-size: large;">January 6, 2022</code></button>
+    <div class="content">
+        <p>Look : Store has been updated to have a user-friendly interface</p>
+        <p>Bug Fix : Fixed a bug where store command did not work</p>
+    </div>
+
+    <button type="button" class="collapsible">Patch 1.0 - <code style="font-size: large;">December 12, 2021</code></button>
+    <div style="margin-bottom: 15%" class="content">
+        <p>Feature : Sell your Spells, Jutsu and Weapons</p>
+        <p>Improvement : Help command icon colors are now themed</p>
+    </div>
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+  
+      for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+          content.style.display = "none";
+          } else {
+          content.style.display = "block";
+          }
+      });
+      }
+      </script>
+</body>
+
+<footer>
+    <a href="https://github.com/MuditMehta07/Michelle/blob/main/PrivacyPolicy.md">Privacy Policy</a>
+    <a href="https://github.com/MuditMehta07/Michelle/blob/main/TermsOfService.md">Terms of Service</a>
+    <a href="https://top.gg/bot/840180379389263882">Top.gg</a>
+  </footer>
+
+</html>
