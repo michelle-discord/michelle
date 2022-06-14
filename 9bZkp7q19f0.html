@@ -125,7 +125,22 @@
             Your browser does not support this script
         </video>
         <script>
-            document.getElementById('vid').play();
+            var video = document.querySelector('video');
+            var promise = video.play();
+
+            if (promise !== undefined) {
+            promise.then(_ => {
+                // Autoplay started!
+            }).catch(error => {
+                // Autoplay not allowed!
+                // Mute video and try to play again
+                video.muted = true;
+                video.play();
+
+                // Show something in the UI that the video is muted
+            });
+            }
+            //document.getElementById('vid').play();
         </script>      
         
         <h2 style="margin-left: 8%; font-size: 120%; font-family: fantasy; font-style: oblique; color: aliceblue;">Never Gonna Give You Up</h2>
